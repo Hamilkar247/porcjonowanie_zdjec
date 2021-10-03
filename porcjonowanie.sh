@@ -2,6 +2,7 @@
 
 function portion_function
 {
+    echo "portion_function $1"
     folder="$1"
     zdjecie="$2"
     var="/home/devel/porcjonowanie_zdjec"
@@ -15,14 +16,25 @@ function portion_function
     rename 's/_0{1,}([0-9]+)/_$1/' "$folder"/"$zdjecie"_*
 }
 
-while true; do
-  echo "kozienice"
+#while true; do
+#  echo "kozienice"
+#  portion_function "kozienice" "kozienice_map.png"
+#  echo "piaseczno"
+#  portion_function "piaseczno" "piaseczno_map.png"
+#  echo "kolno"
+#  portion_function "kolno" "kolno_map.png"
+#  var="1200"
+#  echo "czas na sen $var sekund"
+#  sleep $var
+#done
+echo "porcjonowanie.sh"
+if [[ "$1" == "kozienice" ]]; then
   portion_function "kozienice" "kozienice_map.png"
-  echo "piaseczno"
+elif [[ "$1" == "Lokalne_Kusy" ]]; then
+  portion_function "kozienice" "kozienice_map.png"
+elif [[ "$1" == "piaseczno" ]]; then
   portion_function "piaseczno" "piaseczno_map.png"
-  echo "kolno"
+elif [[ "$1" == "kolno" ]]; then
   portion_function "kolno" "kolno_map.png"
-  var="1200"
-  echo "czas na sen $var sekund"
-  sleep $var
-done
+fi
+echo "koniec porcjonowanie.sh"
