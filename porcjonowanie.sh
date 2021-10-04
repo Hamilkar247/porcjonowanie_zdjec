@@ -10,7 +10,7 @@ function portion_function
     sudo rm "$folder"/"$zdjecie"_*     #kozienice/kozienice_map.png_*
     echo "dzielimy zdjecia"
     #b - bajty, d - sufix sumeryczny 
-    sudo split -b 200000 ../"$zdjecie" "$folder"/"$zdjecie""_" -d
+    sudo split -b 190000 ../"$zdjecie" "$folder"/"$zdjecie""_" -d
     #usuwam "przewodzace" zero /leading zero
     echo "poprawiam ich nazewnictwo"
     rename 's/_0{1,}([0-9]+)/_$1/' "$folder"/"$zdjecie"_*
